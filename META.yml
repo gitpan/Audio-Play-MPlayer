@@ -1,0 +1,24 @@
+---
+name: Audio-Play-MPlayer
+version: 0.01
+author:
+  - |-
+    Mattia Barbon <mbarbon@cpan.org>, using ideas from
+    L<Audio::Play::MPG123> by Marc Lehmann <schmorp@schmorp.de>.
+abstract: a frontend to play audio files using MPlayer
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Class::Accessor: 0.27
+build_requires:
+  Test::More: 0
+  Time::HiRes: 0
+provides:
+  Audio::Play::MPlayer:
+    file: lib/Audio/Play/MPlayer.pm
+    version: 0.01
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
