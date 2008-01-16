@@ -1,6 +1,6 @@
 ---
 name: Audio-Play-MPlayer
-version: 0.01
+version: 0.02
 author:
   - |-
     Mattia Barbon <mbarbon@cpan.org>, using ideas from
@@ -12,12 +12,13 @@ resources:
 requires:
   Class::Accessor: 0.27
 build_requires:
+  Module::Build: 0.26
   Test::More: 0
   Time::HiRes: 0
 provides:
   Audio::Play::MPlayer:
     file: lib/Audio/Play/MPlayer.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
