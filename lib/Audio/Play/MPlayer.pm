@@ -45,8 +45,8 @@ have not been implemented, and that:
     jump
     tpf
 
-work differently: C<jump> take offsets in seconds, and C<tpf> always
-returns C<1>, to be able to write:
+work differently: C<jump> takes offsets in seconds, and C<tpf> always
+returns C<1> to make it possible to write:
 
     $player->jump( 60 / $player->tpf );
 
@@ -55,7 +55,7 @@ returns C<1>, to be able to write:
 use IPC::Open3 qw(open3);
 use IO::Handle;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # FIXME, missing
 # url type layer mode mode_extension copyrighted error_protected
@@ -181,7 +181,8 @@ sub parse {
 sub poll {
     my( $self, $wait ) = @_;
 
-    $self->parse( qr/^\0/, $wait );
+    $self->parse( qr/./, $wait ); # wait for anything
+    $self->parse( qr/^\0/, 0 ); # consume pending output
 }
 
 sub command {
@@ -254,6 +255,11 @@ L<Audio::Play::MPG123> by Marc Lehmann <schmorp@schmorp.de>.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
+
+=head1 SOURCES
+
+The latest sources can be found on GitHub at
+L<http://github.com/mbarbon/audio-play-mplayer/tree>
 
 =head1 THANKS
 
