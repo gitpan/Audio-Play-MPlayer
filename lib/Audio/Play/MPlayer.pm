@@ -85,7 +85,7 @@ sub start_mplayer {
     my( $wr, $rd );
 
     my $pid = open3( $wr, $rd, $rd,
-                     'mplayer', '-slave', '-idle', @{$args || []} );
+                     'mplayer', '-slave', '-idle', '-v', @{$args || []} );
 
     die "Can't start mplayer" unless $pid;
 
@@ -141,11 +141,13 @@ sub parse {
     my( $self, $re, $wait ) = @_;
 
     while( my $line = $self->line( $wait ) ) {
-        if( $line =~ /^A:\s+([\d\.]+)\s+\([\d\:\.]+\)\s+of\s+([\d\.]+)/ ) {
+        if( $line =~ /^EOF code:/ ) {
+	    $self->{state} = 0;
+	} elsif($line =~ /^A:\s+([\d\.]+)\s+\([\d\:\.]+\)\s+of\s+([\d\.]+)/ ) {
             $self->{frame}->[2] = $1;
             $self->{frame}->[3] = $2 - $1;
             # FIXME heuristic
-            $self->{state} = 0 if $self->{frame}->[3] <= 0;
+	    $self->{state} = 0 if $self->{frame}->[3] <= 0;
         } elsif( $line =~ /=====\s+PAUSE\s+=====/ ) {
             $self->{state} = 1;
         } elsif( $line =~ /^ANS_(\w+)='([^']+)'$/ ) {

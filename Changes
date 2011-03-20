@@ -1,5 +1,9 @@
 Revision history for Perl extension Audio::Play::Mplayer.
 
+0.04  Sun Mar 20 11:54:34 AEST 2011
+	- Use -v (verbose) flag on MPlayer instantiation
+	- Use EOF output marker to detect file playback completion
+
 0.03  Sun Apr 18 17:35:18 CEST 2010
 	- Stop poll() with 'wait' flag from hanging.
 
