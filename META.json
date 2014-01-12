@@ -1,10 +1,10 @@
 {
    "abstract" : "a frontend to play audio files using MPlayer",
    "author" : [
-      "Mattia Barbon <mbarbon@cpan.org> and Luke Poskitt <ltp@cpan.org>, \nusing ideas from L<Audio::Play::MPG123> by Marc Lehmann <schmorp@schmorp.de>."
+      "Luke Poskitt <ltp@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112621",
+   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.112621",
    "license" : [
       "perl_5"
    ],
@@ -13,36 +13,29 @@
       "version" : "2"
    },
    "name" : "Audio-Play-MPlayer",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.26",
-            "Test::More" : 0,
-            "Time::HiRes" : 0
+            "ExtUtils::MakeMaker" : 0
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38"
+            "ExtUtils::MakeMaker" : 0
          }
       },
       "runtime" : {
          "requires" : {
-            "Class::Accessor" : "0.27"
+            "Test::More" : 0
          }
       }
    },
-   "provides" : {
-      "Audio::Play::MPlayer" : {
-         "file" : "lib/Audio/Play/MPlayer.pm",
-         "version" : "0.05"
-      }
-   },
    "release_status" : "stable",
-   "resources" : {
-      "license" : [
-         "http://dev.perl.org/licenses/"
-      ]
-   },
-   "version" : "0.05"
+   "version" : "0.06"
 }

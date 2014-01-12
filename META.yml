@@ -1,26 +1,22 @@
 ---
 abstract: 'a frontend to play audio files using MPlayer'
 author:
-  - "Mattia Barbon <mbarbon@cpan.org> and Luke Poskitt <ltp@cpan.org>, \nusing ideas from L<Audio::Play::MPG123> by Marc Lehmann <schmorp@schmorp.de>."
+  - 'Luke Poskitt <ltp@cpan.org>'
 build_requires:
-  Module::Build: 0.26
-  Test::More: 0
-  Time::HiRes: 0
+  ExtUtils::MakeMaker: 0
 configure_requires:
-  Module::Build: 0.38
+  ExtUtils::MakeMaker: 0
 dynamic_config: 1
-generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112621'
+generated_by: 'ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.112621'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Audio-Play-MPlayer
-provides:
-  Audio::Play::MPlayer:
-    file: lib/Audio/Play/MPlayer.pm
-    version: 0.05
+no_index:
+  directory:
+    - t
+    - inc
 requires:
-  Class::Accessor: 0.27
-resources:
-  license: http://dev.perl.org/licenses/
-version: 0.05
+  Test::More: 0
+version: 0.06
