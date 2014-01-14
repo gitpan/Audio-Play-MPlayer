@@ -18,5 +18,8 @@ no_index:
     - t
     - inc
 requires:
+  Class::Accessor::Fast: 0
+  IO::Handle: 0
+  IPC::Open3: 0
   Test::More: 0
-version: 0.06
+version: 0.07
